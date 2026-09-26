@@ -246,3 +246,7 @@ Initial sensing experiments use an isolated low-voltage AC test loop. Permanent 
 6. Evaluate harvesting only against the working battery-backed baseline.
 
 Open decisions: exact CT and accuracy envelope; front end/ADC/filter; MCU module and antenna; enclosure and battery; flash/journal and update partitioning; application transport and commissioning credentials; hub hardware; remote-access mechanism. These are implementation choices to resolve through evidence, not missing user preferences that block initial experiments.
+
+### Compact layout candidate
+
+[Compact C0](../hardware/nami-compact/README.md) implements the Rev A circuit on a 24 × 32 mm, four-layer, double-sided PCB. Battery, clamp, harness and enclosure are external to that outline. This is a mechanical/layout candidate; it does not establish measurement accuracy, one-year battery life, installed RF performance or production qualification.

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Independent checks on KiCad-exported connectivity and analog calculations."""
 import cmath, json, math
+import os
 from pathlib import Path
 import xml.etree.ElementTree as ET
-out=Path(__file__).resolve().parents[1]/'nami-rev-a'
+out=Path(__file__).resolve().parents[1]/('nami-compact' if os.environ.get('NAMI_VARIANT')=='compact' else 'nami-rev-a')
 doc=ET.parse(out/'exports/nami-netlist.xml')
 pin_net={}
 for net in doc.findall('./nets/net'):

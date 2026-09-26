@@ -8,10 +8,11 @@ from pathlib import Path
 import sexpdata as sx
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'nami-rev-a'
+COMPACT = os.environ.get('NAMI_VARIANT') == 'compact'
+OUT = ROOT / ('nami-compact' if COMPACT else 'nami-rev-a')
 LIB = Path(os.environ.get('KICAD_SYMBOL_DIR', '/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols'))
 S = sx.Symbol
-def uid(key): return str(uuid.uuid5(uuid.NAMESPACE_URL, 'nami-reva/' + key))
+def uid(key): return str(uuid.uuid5(uuid.NAMESPACE_URL, ('nami-compact/' if COMPACT else 'nami-reva/') + key))
 def field(a,k): return next((x for x in a if isinstance(x,list) and str(x[0])==k),None)
 def children(a,k): return [x for x in a if isinstance(x,list) and str(x[0])==k]
 cache={}
@@ -78,7 +79,7 @@ add('analog','D1','Diode:BAV99','BAV199',{1:'GND',2:'VDD_A',3:'SENSE'},(111.76,3
 r('analog','R9','1M 0.1%','VDD_A','VMID_DIV',(35.56,88.9))
 r('analog','R10','1M 0.1%','VMID_DIV','GND',(60.96,88.9))
 c('analog','C6','1u X7R','VMID_DIV','GND',(86.36,88.9))
-opa='Amplifier_Operational:OPA2333xxD';opfp='Package_SO:SOIC-8_3.9x4.9mm_P1.27mm'
+opa='Amplifier_Operational:OPA2333xxDGK' if COMPACT else 'Amplifier_Operational:OPA2333xxD';opfp='Package_SO:SOIC-8_3.9x4.9mm_P1.27mm'
 add('analog','U2',opa,'OPA2333AID',{1:'VMID_BUF',2:'VMID_BUF',3:'VMID_DIV'},(121.92,88.9),opfp,unit=1)
 r('analog','R11','100R','VMID_BUF','VMID',(154.94,88.9))
 c('analog','C7','1u X7R','VMID','GND',(180.34,88.9))
@@ -111,6 +112,34 @@ r('digital','R21','4.7k','LED_DRIVE','LED_A',(210.82,172.72))
 add('digital','D2','Device:LED','GREEN',{1:'GND',2:'LED_A'},(243.84,172.72),'LED_SMD:LED_0805_2012Metric',note='Normally off')
 r('digital','R22','2M 1%','VBAT','BAT_MON',(294.64,157.48));r('digital','R23','1M 1%','BAT_MON','GND',(327.66,157.48));c('digital','C17','100n X7R','BAT_MON','GND',(358.14,157.48))
 conn('digital','J4',4,'ANALOG DEBUG',{1:'ADC_LOW',2:'ADC_HIGH',3:'VMID',4:'GND'},(299.72,210.82))
+
+# Compact candidate retains the electrical circuit; only packages and interfaces change.
+if COMPACT:
+    for part in parts:
+        ref=part['ref']
+        if part['board'] and ref.startswith('R'):
+            part['fp']='Resistor_SMD:R_0603_1608Metric'
+        if ref in ['C4','C5','C6','C7','C10','C12','C13','C14','C15','C17']:
+            part['fp']='Capacitor_SMD:C_0603_1608Metric'
+        if ref=='U2':
+            part['value']=part['mpn']='OPA2333AIDGKR'
+            part['fp']='Package_SO:VSSOP-8_3x3mm_P0.65mm'
+        if ref in ['SW1','SW2']:
+            part['fp']='Button_Switch_SMD:SW_SPST_B3U-1000P'
+            part['mpn']='B3U-1000P'
+        if ref in ['J1','J2']:
+            part['fp']='Nami:WirePads_2_P2.5'
+            part['note']='Bare solder pads; external strain relief required; no purchased connector'
+        if ref=='J3':
+            part['fp']='Nami:Pogo_2x05_P1.27'
+            part['value']='SWD POGO 1.27mm'
+            part['note']='Custom fixture pads, ARM pin numbering; VTref sense only; no header'
+        if ref=='J4':
+            part['fp']='Nami:Pogo_1x04_P1.27'
+            part['value']='ANALOG POGO'
+        if ref.startswith('TP'):
+            part['fp']='TestPoint:TestPoint_Pad_D1.0mm'
+        if ref=='D2': part['fp']='LED_SMD:LED_0603_1608Metric'
 
 def pins_for(p):
     seen=set()
@@ -164,15 +193,15 @@ def write_sheet(sh):
             ex,ey=round(px+dx*5.08,4),round(py+dy*5.08,4)
             doc.append([S('wire'),[S('pts'),[S('xy'),px,py],[S('xy'),ex,ey]],[S('stroke'),[S('width'),0],[S('type'),S('default')]],[S('uuid'),uid(symid+'/wire/'+num)]])
             doc.append([S('global_label'),net,[S('shape'),S('bidirectional')],[S('at'),ex,ey,angle],eff(.9),[S('uuid'),uid(symid+'/label/'+num)]])
-    doc.append([S('embedded_fonts'),S('no')]);(OUT/(sh+'.kicad_sch')).write_text(sx.dumps(doc)+'\n')
+    doc.append([S('embedded_fonts'),S('no')]);(OUT/(sh+'.kicad_sch')).write_text(sx.dumps(doc).replace('Nami Rev A -','Nami Compact C0 -').replace('A0 BENCH','C0 CANDIDATE')+'\n' if COMPACT else sx.dumps(doc)+'\n')
 for sh in notes:write_sheet(sh)
-doc=[S('kicad_sch'),[S('version'),20250114],[S('generator'),'eeschema'],[S('uuid'),rootid],[S('paper'),'A3'],[S('title_block'),[S('title'),'Nami - Rev A bench prototype'],[S('date'),'2026-09-26'],[S('rev'),'A0']],[S('lib_symbols')]]
+doc=[S('kicad_sch'),[S('version'),20250114],[S('generator'),'eeschema'],[S('uuid'),rootid],[S('paper'),'A3'],[S('title_block'),[S('title'),'Nami Compact C0' if COMPACT else 'Nami - Rev A bench prototype'],[S('date'),'2026-09-26'],[S('rev'),'C0 CANDIDATE' if COMPACT else 'A0']],[S('lib_symbols')]]
 doc+=[text('NAMI / AC CURRENT MONITOR',205.74,25,3),text('Thread + BLE | SCT006 | 16 MiB local history',205.74,36,1.8),text('ENGINEERING PROTOTYPE - ISOLATED LOW-VOLTAGE BENCH USE',205.74,49,1.5)]
 for i,sh in enumerate(notes):
     x=25.4+i*88.9;y=71.12
     doc.append([S('sheet'),[S('at'),x,y],[S('size'),71.12,38.1],[S('stroke'),[S('width'),.1524],[S('type'),S('default')]],[S('fill'),[S('color'),0,0,0,0]],[S('uuid'),sheetids[sh]],prop('Sheetname',sh.upper(),x+35.56,y-2.54),prop('Sheetfile',sh+'.kicad_sch',x+35.56,y+40.64),[S('instances'),[S('project'),'nami',[S('path'),'/'+rootid,[S('page'),str(i+2)]]]]])
 doc+=[text('External sensor harness: SCT006 20A:25mA + permanent 5.00-ohm burden at the clamp.',205.74,132,1.2),text('No mains conductors terminate on this board. Battery/bench source connects at J2.',205.74,140,1.2),text('Schematic and routed PCB are review artifacts. See README for verification and release status.',205.74,148,1.2),[S('sheet_instances'),[S('path'),'/',[S('page'),'1']]],[S('embedded_fonts'),S('no')]]
-(OUT/'nami.kicad_sch').write_text(sx.dumps(doc)+'\n')
+(OUT/'nami.kicad_sch').write_text(sx.dumps(doc).replace('Nami Rev A bench prototype','Nami Compact C0').replace('A0 BENCH','C0 CANDIDATE').replace('ENGINEERING PROTOTYPE - ISOLATED LOW-VOLTAGE BENCH USE','COMPACT LAYOUT CANDIDATE - VALIDATION REQUIRED')+'\n' if COMPACT else sx.dumps(doc)+'\n')
 # Manifest ties physical pins directly to schematic connections for independent netlist checks.
 physical={}
 for p in parts:
@@ -183,9 +212,12 @@ for p in parts:
     physical[p['ref']]['nets'].update(p['nets'])
 (OUT/'connectivity.json').write_text(json.dumps(physical,indent=2)+'\n')
 with (OUT/'exports/bom.csv').open('w') as f:
-    w=csv.writer(f);w.writerow(['Reference','Value','MPN','Footprint','DNP','Note'])
+    w=csv.writer(f,lineterminator='\n' if COMPACT else '\r\n');w.writerow(['Reference','Value','MPN','Footprint','DNP','Note'])
     for ref,p in physical.items():w.writerow([ref,p['value'],p['mpn'],p['fp'],p['dnp'],p['note']])
 # Minimal project; KiCad fills editor preferences when opened.
 project={'meta':{'filename':'nami.kicad_pro','version':1},'net_settings':{'classes':[{'name':'Default','clearance':0.2,'track_width':0.25,'via_diameter':0.6,'via_drill':0.3}],'version':3},'board':{'design_settings':{'rules':{'min_clearance':0.15,'min_track_width':0.15,'min_via_diameter':0.5,'min_through_hole_diameter':0.3},'rule_severities':{'silk_over_copper':'warning'}}}}
+if COMPACT:
+    project['net_settings']['classes'][0].update(clearance=0.15,track_width=0.18,via_diameter=0.5,via_drill=0.25)
+    project['board']['design_settings']['rules'].update(min_through_hole_diameter=0.25,min_hole_clearance=0.25)
 (OUT/'nami.kicad_pro').write_text(json.dumps(project,indent=2)+'\n')
 print('Generated',len(physical),'physical components and five schematic sheets')

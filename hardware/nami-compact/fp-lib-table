@@ -1,0 +1,4 @@
+(fp_lib_table
+ (version 7)
+ (lib (name "Nami")(type "KiCad")(uri "${KIPRJMOD}/Nami.pretty")(options "")(descr "Nami PCB contact pads"))
+)

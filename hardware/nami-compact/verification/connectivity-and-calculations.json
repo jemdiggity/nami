@@ -1,0 +1,29 @@
+{
+  "critical_pin_assertions": 51,
+  "manifest_components_verified": 59,
+  "ct_volts_per_ampere": 0.00625,
+  "high_gain": 31.9,
+  "low_at_20A_rms_V": 0.125,
+  "high_at_0_1A_rms_V": 0.019937500000000004,
+  "low_at_20A_CF3_peak_V": 0.375,
+  "high_at_0_8A_CF3_peak_V": 0.4785000000000001,
+  "high_rms_counts_at_0_1A_12bit_differential_range_0_6V": 68.05333333333336,
+  "filter_estimates": [
+    {
+      "frequency_hz": 60,
+      "low_magnitude_relative_to_dc": 0.999858537087615,
+      "high_magnitude_relative_to_dc_gain": 0.9997210565457778
+    },
+    {
+      "frequency_hz": 1000,
+      "low_magnitude_relative_to_dc": 0.9628711899575039,
+      "high_magnitude_relative_to_dc_gain": 0.928379458565349
+    },
+    {
+      "frequency_hz": 16384,
+      "low_magnitude_relative_to_dc": 0.2124495107919739,
+      "high_magnitude_relative_to_dc_gain": 0.05923525358809255
+    }
+  ],
+  "limitations": "Linear approximate RC + single-pole op-amp calculation only. No CT magnetizing model, op-amp macro-model, parasitics, noise, saturation, regulator simulation or measured hardware."
+}

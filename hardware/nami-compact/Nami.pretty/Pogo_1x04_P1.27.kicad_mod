@@ -1,0 +1,124 @@
+(footprint "Pogo_1x04_P1.27"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Nami bare PCB contact pads; external fixture or strain relief required")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "f61a49be-25a7-4954-bb30-d12447695b44")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "Pogo_1x04_P1.27"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "a17b73db-3283-4ed9-b0b8-c60fe1d2fb34")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ec906212-2182-4dc5-be03-6fc08a1d7166")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d4d6fb7b-df20-4dcb-a20a-d12bccd47c9b")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -2.555 -0.65)
+		(end 2.555 -0.65)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "cf32703d-411d-488e-a1ed-f7c4454ce617")
+	)
+	(fp_line
+		(start -2.555 0.65)
+		(end -2.555 -0.65)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "422d4b0e-82fb-4d1d-92ec-ad13fb9519fc")
+	)
+	(fp_line
+		(start 2.555 -0.65)
+		(end 2.555 0.65)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "f44d5db7-4ee5-4369-90e6-4f99e9589b57")
+	)
+	(fp_line
+		(start 2.555 0.65)
+		(end -2.555 0.65)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "2e75aa24-0d2d-4521-b776-11bd6e2b7253")
+	)
+	(pad "1" smd roundrect
+		(at -1.905 0)
+		(size 0.8 0.8)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(thermal_bridge_angle 45)
+		(uuid "f7913f76-cf1c-48d1-8b01-bf1c83506ab9")
+	)
+	(pad "2" smd roundrect
+		(at -0.635 0)
+		(size 0.8 0.8)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(thermal_bridge_angle 45)
+		(uuid "ff56bc89-6e54-4c0a-b849-13f5c75b9090")
+	)
+	(pad "3" smd roundrect
+		(at 0.635 0)
+		(size 0.8 0.8)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(thermal_bridge_angle 45)
+		(uuid "3bd9d9d5-4f2e-443e-96d4-fec6aa52a78c")
+	)
+	(pad "4" smd roundrect
+		(at 1.905 0)
+		(size 0.8 0.8)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(thermal_bridge_angle 45)
+		(uuid "968fcccb-7bcb-48ba-b59f-cdd671f8fd69")
+	)
+	(embedded_fonts no)
+)

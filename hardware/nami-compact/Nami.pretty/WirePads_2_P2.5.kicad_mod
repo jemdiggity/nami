@@ -1,0 +1,108 @@
+(footprint "WirePads_2_P2.5"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Nami bare PCB contact pads; external fixture or strain relief required")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "8642a544-0327-4d68-9f9a-555badcd861b")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "WirePads_2_P2.5"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "383ceaa0-2d22-4d3d-b3a2-9f6370cb81fa")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "29c2bd09-6e0e-4429-b07b-9c8ee3edcb76")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "36d3c55b-f951-4baa-8544-c7451ba7d73f")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -2.25 -1.5)
+		(end 2.25 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "dd4994c9-bf95-4b61-865c-cdfac8c08551")
+	)
+	(fp_line
+		(start -2.25 1.5)
+		(end -2.25 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "5f66d0f5-7854-4184-b6fb-d94671d7afd4")
+	)
+	(fp_line
+		(start 2.25 -1.5)
+		(end 2.25 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "2faf8f40-a579-4ed3-9cc8-7792fc1a477f")
+	)
+	(fp_line
+		(start 2.25 1.5)
+		(end -2.25 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "a8fa1709-11aa-4b57-8604-24afc1185842")
+	)
+	(pad "1" smd roundrect
+		(at -1.25 0)
+		(size 1.5 2.5)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(thermal_bridge_angle 45)
+		(uuid "e5d5656f-00ae-4b86-9b2c-b145b6d30312")
+	)
+	(pad "2" smd roundrect
+		(at 1.25 0)
+		(size 1.5 2.5)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(thermal_bridge_angle 45)
+		(uuid "3eeb555f-052c-4071-9286-c7fffcfae071")
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+<rect width="1000" height="560" fill="#f6f8fa"/>
+<g font-family="Arial, sans-serif" fill="#172b3a">
+<text x="40" y="48" font-size="27" font-weight="700">Nami: from bench board to compact carrier</text>
+<text x="40" y="78" font-size="16">PCB outlines drawn at the same scale · 4 pixels per millimetre</text>
+<rect x="40" y="130" width="380" height="300" rx="2" fill="#e0e7ec" stroke="#7d8c97" stroke-width="2"/>
+<text x="62" y="170" font-size="21" font-weight="700">Rev A bench</text>
+<text x="62" y="199" font-size="18">95 × 75 mm</text>
+<text x="62" y="228" font-size="16">7,125 mm² · two layers</text>
+<text x="62" y="405" font-size="15">Large headers, debug access, one-sided placement</text>
+<rect x="472" y="130" width="96" height="128" fill="#166753" stroke="#0e4136" stroke-width="2"/>
+<rect x="472" y="130" width="96" height="16" fill="#bedacf"/>
+<text x="592" y="156" font-size="21" font-weight="700">Compact C0</text>
+<text x="592" y="184" font-size="18">24 × 32 mm</text>
+<text x="592" y="211" font-size="16">768 mm² · four layers · two-sided assembly</text>
+<text x="592" y="238" font-size="16">1.0 mm nominal PCB substrate</text>
+<text x="472" y="295" font-size="31" fill="#166753" font-weight="700">89.22% less board area</text>
+<circle cx="521" cy="381" r="49" fill="#e5e8eb" stroke="#7d8c97" stroke-width="2"/>
+<text x="521" y="377" text-anchor="middle" font-size="15" font-weight="700">CR2450</text>
+<text x="521" y="398" text-anchor="middle" font-size="14">Ø24.5 mm</text>
+<text x="592" y="357" font-size="17" font-weight="700">Battery shown separately for scale</text>
+<text x="592" y="384" font-size="16">Holder and clearance increase its size.</text>
+<text x="592" y="411" font-size="16">Keep battery metal away from the antenna.</text>
+<path d="M40 461 H960" stroke="#cbd4db"/>
+<text x="40" y="495" font-size="16" font-weight="700">PCB dimensions are not the complete device dimensions.</text>
+<text x="40" y="522" font-size="15">Clamp, burden harness, battery/holder, wiring and enclosure are external. C0 is a layout candidate pending validation.</text>
+</g></svg>

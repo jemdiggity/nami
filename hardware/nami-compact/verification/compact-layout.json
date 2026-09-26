@@ -1,0 +1,51 @@
+{
+  "outline_mm": [
+    24,
+    32
+  ],
+  "area_mm2": 768,
+  "bench_area_mm2": 7125,
+  "area_reduction_percent": 89.22,
+  "nominal_substrate_mm": 1,
+  "copper_layers": 4,
+  "same_electrical_components_as_bench": 59,
+  "placement_sides": {
+    "front": 31,
+    "back": 28
+  },
+  "routing_segments_by_layer": {
+    "F.Cu": 214,
+    "B.Cu": 121,
+    "In2.Cu": 9
+  },
+  "ground_plane_layer": "In1.Cu; no routed tracks",
+  "via_count": 92,
+  "switch_node_length_mm": {
+    "LX1": 3.621,
+    "LX2": 3.621
+  },
+  "switch_node_vias": {
+    "LX1": 0,
+    "LX2": 0
+  },
+  "crystal_net_total_length_mm": {
+    "XL1": 9.231,
+    "XL2": 9.498
+  },
+  "crystal_net_vias": {
+    "XL1": 0,
+    "XL2": 0
+  },
+  "antenna_copper_exclusion_mm": {
+    "x": [
+      20,
+      44
+    ],
+    "y": [
+      20,
+      24
+    ],
+    "all_copper_layers": true
+  },
+  "scope": "CAD verification only; excludes battery, CT, enclosure and field qualification"
+}

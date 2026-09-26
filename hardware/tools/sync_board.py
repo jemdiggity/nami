@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Synchronize schematic metadata and explicit NC nets without changing routing."""
+import os
 from pathlib import Path
 import xml.etree.ElementTree as ET
 import pcbnew as p
 import wx
 app=wx.App(False)
-out=Path(__file__).resolve().parents[1]/'nami-rev-a'
+out=Path(__file__).resolve().parents[1]/('nami-compact' if os.environ.get('NAMI_VARIANT')=='compact' else 'nami-rev-a')
 b=p.LoadBoard(str(out/'nami.kicad_pcb'));doc=ET.parse(out/'exports/nami-netlist.xml')
 components={c.attrib['ref']:c for c in doc.findall('./components/comp')}
 nc={}
