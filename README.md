@@ -1,6 +1,6 @@
 # Nami 波
 
-An internal prototype that senses the changing magnetic field around an insulated outlet wire to measure AC current without an electrical connection to the conductor.
+An internal prototype for bolt-on equipment telemetry. A split-core current clamp senses the changing magnetic field around one insulated supply conductor without an electrical connection to it. The coin-cell-powered electronics sit in an enclosure outside the equipment. The intended application is 120/240 V AC, single-phase equipment up to 20 A; suitability for that installation remains to be validated.
 
 Nami records one RMS current value each second, retains local history, and sends measurements over Thread to a powered local hub. BLE provides commissioning. The name means “wave”: we are picking up the waves from the wire and measuring them.
 
@@ -11,4 +11,48 @@ Nami records one RMS current value each second, retains local history, and sends
 
 Status: bench and compact hardware design; feasibility validation remains. Native KiCad schematics and a routed prototype PCB are included; firmware and physical validation are not yet complete. Accuracy, battery life, packaging, and installation suitability remain unverified. The board is not a manufacturing or mains-installation release.
 
-The repository is this `nami/` directory, not its parent. No remote repository is configured.
+## Compact PCB
+
+The compact C0 board is 24 × 32 mm with four copper layers. These snapshots show the current KiCad layout; the clamp, battery, and enclosure are external to the board.
+
+| Front | Back |
+| --- | --- |
+| [![Front of the compact Nami PCB](hardware/nami-compact/exports/nami-top.png)](hardware/nami-compact/exports/nami-top.png) | [![Back of the compact Nami PCB](hardware/nami-compact/exports/nami-bottom.png)](hardware/nami-compact/exports/nami-bottom.png) |
+
+[STEP model](hardware/nami-compact/exports/nami-compact.step) · [PCB layout](hardware/nami-compact/nami.kicad_pcb) · [Routing review](hardware/nami-compact/exports/routing-review.pdf)
+
+## Schematics
+
+The previews below are vector SVG exports from the compact KiCad project. Open an image to zoom in. The [complete schematic PDF](hardware/nami-compact/exports/nami-schematic.pdf) and [native KiCad schematic](hardware/nami-compact/nami.kicad_sch) are also available.
+
+### Analog sensing
+
+[![Current sensing amplifier, feedback loops, filters, and midpoint reference](hardware/nami-compact/exports/schematics/nami-ANALOG.svg)](hardware/nami-compact/exports/schematics/nami-ANALOG.svg)
+
+<details>
+<summary>System overview</summary>
+
+[![Schematic sheet overview](hardware/nami-compact/exports/schematics/nami.svg)](hardware/nami-compact/exports/schematics/nami.svg)
+
+</details>
+
+<details>
+<summary>Power supply</summary>
+
+[![Battery input and regulated power supply](hardware/nami-compact/exports/schematics/nami-POWER.svg)](hardware/nami-compact/exports/schematics/nami-POWER.svg)
+
+</details>
+
+<details>
+<summary>Radio, processor, and storage</summary>
+
+[![Thread radio module, flash memory, and digital interfaces](hardware/nami-compact/exports/schematics/nami-DIGITAL.svg)](hardware/nami-compact/exports/schematics/nami-DIGITAL.svg)
+
+</details>
+
+<details>
+<summary>Clamp and wiring harness</summary>
+
+[![Current transformer harness and permanent burden resistors](hardware/nami-compact/exports/schematics/nami-HARNESS.svg)](hardware/nami-compact/exports/schematics/nami-HARNESS.svg)
+
+</details>
