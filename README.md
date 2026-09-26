@@ -15,6 +15,18 @@ Status: bench and compact hardware design; feasibility validation remains. Nativ
 
 The compact C0 board is 24 × 32 mm with four copper layers. These snapshots show the current KiCad layout; the clamp, battery, and enclosure are external to the board.
 
+### 3D model
+
+**[Open the interactive 3D model](hardware/nami-compact/exports/nami-compact.stl)** — drag to rotate and scroll to zoom in GitHub's STL viewer. Click the preview below to open it.
+
+[![Angled 3D view of the compact Nami PCB; click to rotate the model](hardware/nami-compact/exports/nami-3d.png)](hardware/nami-compact/exports/nami-compact.stl)
+
+[Download STEP for CAD](hardware/nami-compact/exports/nami-compact.step) · [Download STL](https://github.com/jemdiggity/nami/raw/refs/heads/main/hardware/nami-compact/exports/nami-compact.stl)
+
+The STL shows board and component geometry in a single color; the preview image includes PCB colors and markings. Models use the available KiCad component bodies and are not a validated mechanical assembly.
+
+### Front and back
+
 | Front | Back |
 | --- | --- |
 | [![Front of the compact Nami PCB](hardware/nami-compact/exports/nami-top.png)](hardware/nami-compact/exports/nami-top.png) | [![Back of the compact Nami PCB](hardware/nami-compact/exports/nami-bottom.png)](hardware/nami-compact/exports/nami-bottom.png) |
