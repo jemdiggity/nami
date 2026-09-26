@@ -1,0 +1,60 @@
+Reference,Value,MPN,Footprint,DNP,Note
+J2,BATTERY / BENCH 2.0-3.3V,,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,False,
+R1,0R / AMMETER,,Resistor_SMD:R_0805_2012Metric,False,Remove to insert current meter; never attach two supplies
+C1,100u 6.3V X5R,GRM32ER60J107ME20L,Capacitor_SMD:C_1210_3225Metric,False,Verify effective capacitance and cold-cell startup
+C2,10u 10V X7R,,Capacitor_SMD:C_0805_2012Metric,False,
+U1,TPS63900DSKR,TPS63900DSKR,Package_SON:WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm,False,
+L1,2.2uH >=2A,XAL4020-222MEC,Inductor_SMD:L_Coilcraft_XAL4020-XXX,False,Verify land pattern before procurement
+R2,0R,,Resistor_SMD:R_0805_2012Metric,False,
+R3,1.87k 1%,,Resistor_SMD:R_0805_2012Metric,False,25mA input-current limit; measure startup and flash load
+R4,13.3k 1%,,Resistor_SMD:R_0805_2012Metric,False,SEL=0 selects 3.0V
+C3,47u 6.3V X5R,,Capacitor_SMD:C_1210_3225Metric,False,
+C4,100n 10V X7R,,Capacitor_SMD:C_0805_2012Metric,False,
+R5,0R / CURRENT LINK,,Resistor_SMD:R_0805_2012Metric,False,
+R6,0R / CURRENT LINK,,Resistor_SMD:R_0805_2012Metric,False,
+R7,0R / CURRENT LINK,,Resistor_SMD:R_0805_2012Metric,False,
+TP1,VREG,,TestPoint:TestPoint_Pad_D1.5mm,False,
+TP2,GND,,TestPoint:TestPoint_Pad_D1.5mm,False,
+J1,CT HARNESS,,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,False,
+R8,1k,,Resistor_SMD:R_0805_2012Metric,False,
+C5,1n C0G,,Capacitor_SMD:C_0805_2012Metric,False,
+D1,BAV199,"BAV199,215",Package_TO_SOT_SMD:SOT-23,False,Low-leakage series diode pinout compatible with BAV99; not a mains barrier
+R9,1M 0.1%,,Resistor_SMD:R_0805_2012Metric,False,
+R10,1M 0.1%,,Resistor_SMD:R_0805_2012Metric,False,
+C6,1u X7R,,Capacitor_SMD:C_0805_2012Metric,False,
+U2,OPA2333AID,OPA2333AID,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,
+R11,100R,,Resistor_SMD:R_0805_2012Metric,False,
+C7,1u X7R,,Capacitor_SMD:C_0805_2012Metric,False,
+R12,10k 0.1%,,Resistor_SMD:R_0805_2012Metric,False,
+R13,309k 0.1%,,Resistor_SMD:R_0805_2012Metric,False,Gain 31.9 relative to VMID
+R14,1k,,Resistor_SMD:R_0805_2012Metric,False,
+C8,22n C0G,,Capacitor_SMD:C_0805_2012Metric,False,
+R15,1k,,Resistor_SMD:R_0805_2012Metric,False,
+C9,47n C0G,,Capacitor_SMD:C_0805_2012Metric,False,
+C10,100n X7R,,Capacitor_SMD:C_0805_2012Metric,False,
+TP3,SENSE,,TestPoint:TestPoint_Pad_D1.5mm,False,
+TP4,VMID,,TestPoint:TestPoint_Pad_D1.5mm,False,
+TP5,ADC_HIGH,,TestPoint:TestPoint_Pad_D1.5mm,False,
+U3,MDBT50Q-1MV2,MDBT50Q-1MV2,RF_Module:Raytac_MDBT50Q,False,
+C11,10u 10V X7R,,Capacitor_SMD:C_0805_2012Metric,False,
+C12,100n X7R,,Capacitor_SMD:C_0805_2012Metric,False,
+Y1,32.768kHz CL=7pF,ABS07-32.768KHZ-7-T,Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm,False,9pF capacitors assume approximately 2.5pF stray; characterize
+C13,9p C0G,,Capacitor_SMD:C_0805_2012Metric,False,
+C14,9p C0G,,Capacitor_SMD:C_0805_2012Metric,False,
+U4,W25Q128JVSIQ,W25Q128JVSIQ,Package_SO:SOIC-8_5.3x5.3mm_P1.27mm,False,
+R16,100k,,Resistor_SMD:R_0805_2012Metric,False,
+R17,100k,,Resistor_SMD:R_0805_2012Metric,False,
+R18,100k,,Resistor_SMD:R_0805_2012Metric,False,
+C15,100n X7R,,Capacitor_SMD:C_0805_2012Metric,False,
+C16,10u 10V X7R,,Capacitor_SMD:C_0805_2012Metric,False,
+J3,SWD 1.27mm,,Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical,False,VTref is sense only; debugger must not power board
+SW1,PAIR,,Button_Switch_THT:SW_PUSH_6mm,False,
+R19,100k,,Resistor_SMD:R_0805_2012Metric,False,
+SW2,RESET,,Button_Switch_THT:SW_PUSH_6mm,False,
+R20,100k,,Resistor_SMD:R_0805_2012Metric,False,
+R21,4.7k,,Resistor_SMD:R_0805_2012Metric,False,
+D2,GREEN,,LED_SMD:LED_0805_2012Metric,False,Normally off
+R22,2M 1%,,Resistor_SMD:R_0805_2012Metric,False,
+R23,1M 1%,,Resistor_SMD:R_0805_2012Metric,False,
+C17,100n X7R,,Capacitor_SMD:C_0805_2012Metric,False,
+J4,ANALOG DEBUG,,Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical,False,

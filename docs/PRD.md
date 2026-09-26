@@ -4,6 +4,8 @@ Version 0.1 · 2026-09-26 · Internal prototype
 
 This document is the authoritative product baseline. It consolidates the earlier hardware, user-story and Thread explorations in `research/`. Requirements are intended behavior; no physical performance is claimed as achieved. Component selection and implementation details remain provisional.
 
+Implementation reference: [Rev A bench hardware](../hardware/nami-rev-a/README.md) provides native KiCad schematics and a routed evaluation PCB. Its larger size, nRF52840 module and characterization front end are deliberate bench choices, not changes to the product's enclosure or battery-life targets.
+
 ## 1. Purpose
 
 Nami measures the changing magnetic field around an existing insulated outlet conductor. It records current without cutting the conductor or making an electrical connection to it. The name 波, “wave,” reflects picking up the waves from the wire and measuring them.

@@ -1,0 +1,1051 @@
+{
+  "J2": {
+    "sheet": "power",
+    "ref": "J2",
+    "lib": "Connector_Generic:Conn_01x02",
+    "value": "BATTERY / BENCH 2.0-3.3V",
+    "fp": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "0ce49c98-96e9-5264-809c-0e437057543a",
+    "nets": {
+      "1": "BAT_IN",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "R1": {
+    "sheet": "power",
+    "ref": "R1",
+    "lib": "Device:R",
+    "value": "0R / AMMETER",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "Remove to insert current meter; never attach two supplies",
+    "dnp": false,
+    "board": true,
+    "uuid": "24e181e3-bc88-5d92-98c3-f0f57ff0b93c",
+    "nets": {
+      "1": "BAT_IN",
+      "2": "VBAT"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "C1": {
+    "sheet": "power",
+    "ref": "C1",
+    "lib": "Device:C",
+    "value": "100u 6.3V X5R",
+    "fp": "Capacitor_SMD:C_1210_3225Metric",
+    "mpn": "GRM32ER60J107ME20L",
+    "note": "Verify effective capacitance and cold-cell startup",
+    "dnp": false,
+    "board": true,
+    "uuid": "0a4505ce-42b5-537d-9505-de1405816a13",
+    "nets": {
+      "1": "VBAT",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "C2": {
+    "sheet": "power",
+    "ref": "C2",
+    "lib": "Device:C",
+    "value": "10u 10V X7R",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "f91970cb-673e-5a2d-8fdb-ba59dd71acb1",
+    "nets": {
+      "1": "VBAT",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "U1": {
+    "sheet": "power",
+    "ref": "U1",
+    "lib": "Regulator_Switching:TPS63900",
+    "value": "TPS63900DSKR",
+    "fp": "Package_SON:WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm",
+    "mpn": "TPS63900DSKR",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "033280b3-ab2b-5d1a-a365-2e4623c72b54",
+    "nets": {
+      "1": "VBAT",
+      "2": "GND",
+      "3": "CFG1",
+      "4": "CFG2",
+      "5": "CFG3",
+      "6": "VREG",
+      "7": "LX2",
+      "8": "GND",
+      "9": "LX1",
+      "10": "VBAT",
+      "11": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "L1": {
+    "sheet": "power",
+    "ref": "L1",
+    "lib": "Device:L",
+    "value": "2.2uH >=2A",
+    "fp": "Inductor_SMD:L_Coilcraft_XAL4020-XXX",
+    "mpn": "XAL4020-222MEC",
+    "note": "Verify land pattern before procurement",
+    "dnp": false,
+    "board": true,
+    "uuid": "21bad15c-35ea-5bc4-95d1-368b085bd97c",
+    "nets": {
+      "1": "LX1",
+      "2": "LX2"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "R2": {
+    "sheet": "power",
+    "ref": "R2",
+    "lib": "Device:R",
+    "value": "0R",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "ea18b493-a9d7-521b-aecb-f933edd7ab22",
+    "nets": {
+      "1": "CFG1",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "R3": {
+    "sheet": "power",
+    "ref": "R3",
+    "lib": "Device:R",
+    "value": "1.87k 1%",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "25mA input-current limit; measure startup and flash load",
+    "dnp": false,
+    "board": true,
+    "uuid": "698bb672-a651-54a7-9958-9c798c89c1fe",
+    "nets": {
+      "1": "CFG2",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "R4": {
+    "sheet": "power",
+    "ref": "R4",
+    "lib": "Device:R",
+    "value": "13.3k 1%",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "SEL=0 selects 3.0V",
+    "dnp": false,
+    "board": true,
+    "uuid": "a9725656-776d-57c3-ac39-b4becea29e75",
+    "nets": {
+      "1": "CFG3",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "C3": {
+    "sheet": "power",
+    "ref": "C3",
+    "lib": "Device:C",
+    "value": "47u 6.3V X5R",
+    "fp": "Capacitor_SMD:C_1210_3225Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "ffa876d7-df8d-5d2b-b5cf-dabd3ec3ae95",
+    "nets": {
+      "1": "VREG",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "C4": {
+    "sheet": "power",
+    "ref": "C4",
+    "lib": "Device:C",
+    "value": "100n 10V X7R",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "3e98021d-0e59-5664-80ab-237e1e35f43a",
+    "nets": {
+      "1": "VREG",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "R5": {
+    "sheet": "power",
+    "ref": "R5",
+    "lib": "Device:R",
+    "value": "0R / CURRENT LINK",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "11f7e9fb-42f5-5c39-9d66-4ee2880589a0",
+    "nets": {
+      "1": "VREG",
+      "2": "VDD_M"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "R6": {
+    "sheet": "power",
+    "ref": "R6",
+    "lib": "Device:R",
+    "value": "0R / CURRENT LINK",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "cf49009b-2c4f-5b45-beba-3c4993f2b613",
+    "nets": {
+      "1": "VREG",
+      "2": "VDD_A"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "R7": {
+    "sheet": "power",
+    "ref": "R7",
+    "lib": "Device:R",
+    "value": "0R / CURRENT LINK",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "68408d84-2e4d-5abe-ac55-ccf66c75a2cd",
+    "nets": {
+      "1": "VREG",
+      "2": "VDD_F"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "TP1": {
+    "sheet": "power",
+    "ref": "TP1",
+    "lib": "Connector:TestPoint",
+    "value": "VREG",
+    "fp": "TestPoint:TestPoint_Pad_D1.5mm",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "4f666de0-8d1a-51bf-9820-0746e022d1ca",
+    "nets": {
+      "1": "VREG"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "TP2": {
+    "sheet": "power",
+    "ref": "TP2",
+    "lib": "Connector:TestPoint",
+    "value": "GND",
+    "fp": "TestPoint:TestPoint_Pad_D1.5mm",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "831fc5f8-9c9f-51b8-8fbd-8eb5a9756e8d",
+    "nets": {
+      "1": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/6848c1ab-b66c-5732-960e-fdb3556c0468"
+  },
+  "J1": {
+    "sheet": "analog",
+    "ref": "J1",
+    "lib": "Connector_Generic:Conn_01x02",
+    "value": "CT HARNESS",
+    "fp": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "26a9728b-bd56-5eb3-8334-9872646adcc1",
+    "nets": {
+      "1": "CT_P",
+      "2": "VMID"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "R8": {
+    "sheet": "analog",
+    "ref": "R8",
+    "lib": "Device:R",
+    "value": "1k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "8da5db84-e55d-5ac9-8a7c-b5b5a0dbbc24",
+    "nets": {
+      "1": "CT_P",
+      "2": "SENSE"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "C5": {
+    "sheet": "analog",
+    "ref": "C5",
+    "lib": "Device:C",
+    "value": "1n C0G",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "edf2a21c-be87-537f-8c63-314417790cd0",
+    "nets": {
+      "1": "SENSE",
+      "2": "VMID"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "D1": {
+    "sheet": "analog",
+    "ref": "D1",
+    "lib": "Diode:BAV99",
+    "value": "BAV199",
+    "fp": "Package_TO_SOT_SMD:SOT-23",
+    "mpn": "BAV199,215",
+    "note": "Low-leakage series diode pinout compatible with BAV99; not a mains barrier",
+    "dnp": false,
+    "board": true,
+    "uuid": "464129ca-7a6a-54fd-bd4a-2c5fbd3a9cc8",
+    "nets": {
+      "1": "GND",
+      "2": "VDD_A",
+      "3": "SENSE"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "R9": {
+    "sheet": "analog",
+    "ref": "R9",
+    "lib": "Device:R",
+    "value": "1M 0.1%",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "3fcaafe3-b692-56a7-9d45-779a0aab18dc",
+    "nets": {
+      "1": "VDD_A",
+      "2": "VMID_DIV"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "R10": {
+    "sheet": "analog",
+    "ref": "R10",
+    "lib": "Device:R",
+    "value": "1M 0.1%",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "77e4fa04-8ab9-5795-990e-baf24fcfd7d4",
+    "nets": {
+      "1": "VMID_DIV",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "C6": {
+    "sheet": "analog",
+    "ref": "C6",
+    "lib": "Device:C",
+    "value": "1u X7R",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "6c8b5a1f-c186-5bdb-9421-97ef21c1a01f",
+    "nets": {
+      "1": "VMID_DIV",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "U2": {
+    "sheet": "analog",
+    "ref": "U2",
+    "lib": "Amplifier_Operational:OPA2333xxD",
+    "value": "OPA2333AID",
+    "fp": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+    "mpn": "OPA2333AID",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "d9ce67b4-fe80-54cc-ba6c-4be43a1d02e0",
+    "nets": {
+      "1": "VMID_BUF",
+      "2": "VMID_BUF",
+      "3": "VMID_DIV",
+      "5": "SENSE",
+      "6": "GAIN_FB",
+      "7": "HIGH_OUT",
+      "4": "GND",
+      "8": "VDD_A"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "R11": {
+    "sheet": "analog",
+    "ref": "R11",
+    "lib": "Device:R",
+    "value": "100R",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "ca2ac900-7f03-574c-8eb8-cf757c50376c",
+    "nets": {
+      "1": "VMID_BUF",
+      "2": "VMID"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "C7": {
+    "sheet": "analog",
+    "ref": "C7",
+    "lib": "Device:C",
+    "value": "1u X7R",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "08f7cb91-bab1-5be8-812c-0ae54bfb2dd8",
+    "nets": {
+      "1": "VMID",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "R12": {
+    "sheet": "analog",
+    "ref": "R12",
+    "lib": "Device:R",
+    "value": "10k 0.1%",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "0eba44a2-9e30-56e0-9334-3a10dd3fdfbd",
+    "nets": {
+      "1": "GAIN_FB",
+      "2": "VMID"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "R13": {
+    "sheet": "analog",
+    "ref": "R13",
+    "lib": "Device:R",
+    "value": "309k 0.1%",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "Gain 31.9 relative to VMID",
+    "dnp": false,
+    "board": true,
+    "uuid": "4a80e7c5-0358-5213-b200-e6242031b2cf",
+    "nets": {
+      "1": "HIGH_OUT",
+      "2": "GAIN_FB"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "R14": {
+    "sheet": "analog",
+    "ref": "R14",
+    "lib": "Device:R",
+    "value": "1k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "6663d615-cd17-52d9-b6b0-bf3ba7eb292a",
+    "nets": {
+      "1": "SENSE",
+      "2": "ADC_LOW"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "C8": {
+    "sheet": "analog",
+    "ref": "C8",
+    "lib": "Device:C",
+    "value": "22n C0G",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "899f50c9-7313-5dd8-878d-952235179a91",
+    "nets": {
+      "1": "ADC_LOW",
+      "2": "VMID"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "R15": {
+    "sheet": "analog",
+    "ref": "R15",
+    "lib": "Device:R",
+    "value": "1k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "f9ec9cf5-a561-5b4d-8e05-f1716bb206af",
+    "nets": {
+      "1": "HIGH_OUT",
+      "2": "ADC_HIGH"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "C9": {
+    "sheet": "analog",
+    "ref": "C9",
+    "lib": "Device:C",
+    "value": "47n C0G",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "21cbc19e-e911-5066-b1d9-bede10f16284",
+    "nets": {
+      "1": "ADC_HIGH",
+      "2": "VMID"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "C10": {
+    "sheet": "analog",
+    "ref": "C10",
+    "lib": "Device:C",
+    "value": "100n X7R",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "7118cc60-399c-592a-b92d-53b6b18c3e3a",
+    "nets": {
+      "1": "VDD_A",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "TP3": {
+    "sheet": "analog",
+    "ref": "TP3",
+    "lib": "Connector:TestPoint",
+    "value": "SENSE",
+    "fp": "TestPoint:TestPoint_Pad_D1.5mm",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "3d655ec8-10ab-52e8-874b-c25e098ad269",
+    "nets": {
+      "1": "SENSE"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "TP4": {
+    "sheet": "analog",
+    "ref": "TP4",
+    "lib": "Connector:TestPoint",
+    "value": "VMID",
+    "fp": "TestPoint:TestPoint_Pad_D1.5mm",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "b5cc807d-e288-5ad8-bc48-034a4f54d01b",
+    "nets": {
+      "1": "VMID"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "TP5": {
+    "sheet": "analog",
+    "ref": "TP5",
+    "lib": "Connector:TestPoint",
+    "value": "ADC_HIGH",
+    "fp": "TestPoint:TestPoint_Pad_D1.5mm",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "c57ef595-de55-5d3b-a81d-356cbff90ba3",
+    "nets": {
+      "1": "ADC_HIGH"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/e5a87926-c4a9-5100-984b-a547b260a64e"
+  },
+  "U3": {
+    "sheet": "digital",
+    "ref": "U3",
+    "lib": "RF_Module:MDBT50Q-1MV2",
+    "value": "MDBT50Q-1MV2",
+    "fp": "RF_Module:Raytac_MDBT50Q",
+    "mpn": "MDBT50Q-1MV2",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "939e9f81-e7f3-5ccf-853c-17a9aab46a84",
+    "nets": {
+      "1": "GND",
+      "2": "GND",
+      "15": "GND",
+      "28": "VDD_M",
+      "30": "VDD_M",
+      "31": "VDD_M",
+      "32": "GND",
+      "33": "GND",
+      "55": "GND",
+      "11": "ADC_LOW",
+      "9": "ADC_HIGH",
+      "20": "VMID",
+      "17": "XL1",
+      "18": "XL2",
+      "51": "SWDIO",
+      "53": "SWDCLK",
+      "40": "RESET_N",
+      "36": "FLASH_CS_N",
+      "37": "FLASH_CLK",
+      "38": "FLASH_MISO",
+      "39": "FLASH_MOSI",
+      "41": "PAIR_N",
+      "42": "LED_DRIVE",
+      "21": "BAT_MON"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "C11": {
+    "sheet": "digital",
+    "ref": "C11",
+    "lib": "Device:C",
+    "value": "10u 10V X7R",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "bcef4735-bccf-500a-b5eb-34bc0f0bf6a7",
+    "nets": {
+      "1": "VDD_M",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "C12": {
+    "sheet": "digital",
+    "ref": "C12",
+    "lib": "Device:C",
+    "value": "100n X7R",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "587004d6-568a-55ea-8b7c-724a00ff3d40",
+    "nets": {
+      "1": "VDD_M",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "Y1": {
+    "sheet": "digital",
+    "ref": "Y1",
+    "lib": "Device:Crystal",
+    "value": "32.768kHz CL=7pF",
+    "fp": "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm",
+    "mpn": "ABS07-32.768KHZ-7-T",
+    "note": "9pF capacitors assume approximately 2.5pF stray; characterize",
+    "dnp": false,
+    "board": true,
+    "uuid": "25efc45f-490e-5cd8-b146-4ed9b0707cba",
+    "nets": {
+      "1": "XL1",
+      "2": "XL2"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "C13": {
+    "sheet": "digital",
+    "ref": "C13",
+    "lib": "Device:C",
+    "value": "9p C0G",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "98e08ec8-b9c1-5c40-80b3-eada0b683303",
+    "nets": {
+      "1": "XL1",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "C14": {
+    "sheet": "digital",
+    "ref": "C14",
+    "lib": "Device:C",
+    "value": "9p C0G",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "ec72ea98-128f-58b8-a515-2d404f1950ba",
+    "nets": {
+      "1": "XL2",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "U4": {
+    "sheet": "digital",
+    "ref": "U4",
+    "lib": "Memory_Flash:W25Q128JVS",
+    "value": "W25Q128JVSIQ",
+    "fp": "Package_SO:SOIC-8_5.3x5.3mm_P1.27mm",
+    "mpn": "W25Q128JVSIQ",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "83c8d6f8-8c07-5bdb-b335-684fada6ab3e",
+    "nets": {
+      "1": "FLASH_CS_N",
+      "2": "FLASH_MISO",
+      "3": "FLASH_WP_N",
+      "4": "GND",
+      "5": "FLASH_MOSI",
+      "6": "FLASH_CLK",
+      "7": "FLASH_HOLD_N",
+      "8": "VDD_F"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "R16": {
+    "sheet": "digital",
+    "ref": "R16",
+    "lib": "Device:R",
+    "value": "100k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "aecc426b-a91b-5e83-807b-870fffd6bb6d",
+    "nets": {
+      "1": "VDD_F",
+      "2": "FLASH_CS_N"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "R17": {
+    "sheet": "digital",
+    "ref": "R17",
+    "lib": "Device:R",
+    "value": "100k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "092ee0fa-8428-50ca-92fd-599cdfbbfd81",
+    "nets": {
+      "1": "VDD_F",
+      "2": "FLASH_WP_N"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "R18": {
+    "sheet": "digital",
+    "ref": "R18",
+    "lib": "Device:R",
+    "value": "100k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "efcad6dc-7bcf-5177-9ab9-cff531babcf2",
+    "nets": {
+      "1": "VDD_F",
+      "2": "FLASH_HOLD_N"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "C15": {
+    "sheet": "digital",
+    "ref": "C15",
+    "lib": "Device:C",
+    "value": "100n X7R",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "715b0620-33e1-509a-9d31-3e456c4f19ee",
+    "nets": {
+      "1": "VDD_F",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "C16": {
+    "sheet": "digital",
+    "ref": "C16",
+    "lib": "Device:C",
+    "value": "10u 10V X7R",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "fd84f3d3-4764-526d-b8ab-ab0a68a07426",
+    "nets": {
+      "1": "VDD_F",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "J3": {
+    "sheet": "digital",
+    "ref": "J3",
+    "lib": "Connector:Conn_ARM_JTAG_SWD_10",
+    "value": "SWD 1.27mm",
+    "fp": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical",
+    "mpn": "",
+    "note": "VTref is sense only; debugger must not power board",
+    "dnp": false,
+    "board": true,
+    "uuid": "630c35f5-5f71-5b89-90a4-a4c00c60d9e3",
+    "nets": {
+      "1": "VDD_M",
+      "2": "SWDIO",
+      "3": "GND",
+      "4": "SWDCLK",
+      "5": "GND",
+      "9": "GND",
+      "10": "RESET_N"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "SW1": {
+    "sheet": "digital",
+    "ref": "SW1",
+    "lib": "Switch:SW_Push",
+    "value": "PAIR",
+    "fp": "Button_Switch_THT:SW_PUSH_6mm",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "71dbe5bc-8603-5e68-8ae9-830aa9e5abf6",
+    "nets": {
+      "1": "PAIR_N",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "R19": {
+    "sheet": "digital",
+    "ref": "R19",
+    "lib": "Device:R",
+    "value": "100k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "715e0354-0398-5611-8ae1-78f1cf44e1af",
+    "nets": {
+      "1": "VDD_M",
+      "2": "PAIR_N"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "SW2": {
+    "sheet": "digital",
+    "ref": "SW2",
+    "lib": "Switch:SW_Push",
+    "value": "RESET",
+    "fp": "Button_Switch_THT:SW_PUSH_6mm",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "b117df54-816c-5992-8d64-e02c300f749a",
+    "nets": {
+      "1": "RESET_N",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "R20": {
+    "sheet": "digital",
+    "ref": "R20",
+    "lib": "Device:R",
+    "value": "100k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "d105d1a9-fb85-5e92-97aa-ebb2cad454c1",
+    "nets": {
+      "1": "VDD_M",
+      "2": "RESET_N"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "R21": {
+    "sheet": "digital",
+    "ref": "R21",
+    "lib": "Device:R",
+    "value": "4.7k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "41236266-dd4f-576c-9a29-c0dc81f2bf7f",
+    "nets": {
+      "1": "LED_DRIVE",
+      "2": "LED_A"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "D2": {
+    "sheet": "digital",
+    "ref": "D2",
+    "lib": "Device:LED",
+    "value": "GREEN",
+    "fp": "LED_SMD:LED_0805_2012Metric",
+    "mpn": "",
+    "note": "Normally off",
+    "dnp": false,
+    "board": true,
+    "uuid": "eb7d5437-496e-516d-9207-d06b117f286c",
+    "nets": {
+      "1": "GND",
+      "2": "LED_A"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "R22": {
+    "sheet": "digital",
+    "ref": "R22",
+    "lib": "Device:R",
+    "value": "2M 1%",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "8fb5a731-3a31-5354-b580-d8ebf3c90ba8",
+    "nets": {
+      "1": "VBAT",
+      "2": "BAT_MON"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "R23": {
+    "sheet": "digital",
+    "ref": "R23",
+    "lib": "Device:R",
+    "value": "1M 1%",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "f4ca0774-671b-5a37-b091-36cc91c6d9a7",
+    "nets": {
+      "1": "BAT_MON",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "C17": {
+    "sheet": "digital",
+    "ref": "C17",
+    "lib": "Device:C",
+    "value": "100n X7R",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "00e8f657-b478-5b35-9107-7ee7872a5d86",
+    "nets": {
+      "1": "BAT_MON",
+      "2": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  },
+  "J4": {
+    "sheet": "digital",
+    "ref": "J4",
+    "lib": "Connector_Generic:Conn_01x04",
+    "value": "ANALOG DEBUG",
+    "fp": "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical",
+    "mpn": "",
+    "note": "",
+    "dnp": false,
+    "board": true,
+    "uuid": "282db770-b98a-5663-aa3b-daa00b8eddfd",
+    "nets": {
+      "1": "ADC_LOW",
+      "2": "ADC_HIGH",
+      "3": "VMID",
+      "4": "GND"
+    },
+    "sheet_path": "/1b8586d0-327f-5863-9f62-5165d0957cc8/ef4602ba-6a7c-5277-89b8-55bc79c7a9bf"
+  }
+}

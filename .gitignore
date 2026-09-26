@@ -5,3 +5,13 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# KiCad editor state and regenerable routing intermediates
+*.kicad_prl
+*.lck
+*-backups/
+fp-info-cache
+*.dsn
+*.rules
+*.log
+placement-drc.rpt
