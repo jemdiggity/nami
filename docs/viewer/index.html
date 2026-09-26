@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101820">
+<title>Nami — explore the hardware</title>
+<script type="module" src="vendor/model-viewer.min.js"></script>
+<style>
+:root{color-scheme:dark;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#edf3f2;background:#101820}*{box-sizing:border-box}body{margin:0}main{max-width:1500px;margin:auto;padding:32px 5vw 24px}header{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:28px;font-weight:650;letter-spacing:-1px}.brand span{color:#75d3bf;margin-left:8px}a{color:#a9c9c5;text-decoration:none}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible{outline:2px solid #79e4c9;outline-offset:4px}.eyebrow{color:#79c8b7;font-size:12px;letter-spacing:2px;margin:32px 0 8px}h1{font-size:clamp(25px,4vw,42px);font-weight:500;letter-spacing:-1.5px;margin:0}.sub{color:#a2b4bb;line-height:1.6;font-size:15px;margin:10px 0 18px}.stage{position:relative;border:1px solid #2d3c45;border-radius:20px;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#394b57 0%,#202e39 48%,#15212b 100%)}model-viewer{display:block;width:100%;height:min(65vh,740px);min-height:350px;--progress-bar-color:#80e5c9;--progress-bar-height:3px}.controls{display:flex;justify-content:center;gap:8px;padding:0 16px 18px;flex-wrap:wrap}button{font:inherit;font-size:13px;color:#d4e3e5;background:#263640;border:1px solid #455660;padding:10px 18px;border-radius:100px;cursor:pointer}button:hover,button[aria-pressed="true"]{color:#122a24;background:#91dfcb;border-color:#91dfcb}.hint{text-align:center;font-size:12px;color:#9eafb8;margin:12px}.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;line-height:1.8;margin-top:20px}.downloads{display:flex;gap:22px}.note{color:#80939c;font-size:12px;max-width:800px;line-height:1.6;margin-top:20px}#status{position:absolute;top:18px;left:20px;font-size:12px;color:#c3d2d6;pointer-events:none}@media(max-width:600px){main{padding:22px 18px}header a{font-size:12px}.eyebrow{margin-top:26px}model-viewer{height:52vh;min-height:320px}.controls button{padding:9px 13px}.footer{gap:10px}}
+</style>
+</head>
+<body><main>
+<header><a class="brand" href="https://github.com/jemdiggity/nami">nami<span>波</span></a><a href="https://github.com/jemdiggity/nami#readme">Back to the project ↗</a></header>
+<p class="eyebrow">COMPACT C0 · HARDWARE EXPLORER</p>
+<h1>A closer look at Nami.</h1>
+<p class="sub">24 × 32 mm. Four layers. Explore the board from every angle.</p>
+<div class="stage">
+<model-viewer id="board" src="nami.glb" alt="Nami current monitor PCB with green soldermask, blue radio module, metal shield, and individual surface mount components" camera-controls touch-action="pan-y" camera-orbit="30deg 40deg 110%" field-of-view="30deg" min-camera-orbit="auto auto 25%" max-camera-orbit="auto auto 250%" environment-image="neutral" exposure="1.1" shadow-intensity="0" interaction-prompt="none" loading="eager"></model-viewer>
+<div id="status" role="status">Loading the 3D model…</div>
+<div class="controls" aria-label="Model view"><button data-orbit="30deg 40deg 110%">Perspective</button><button data-orbit="0deg 0deg 110%">Front</button><button data-orbit="180deg 180deg 110%">Back</button><button id="spin" aria-pressed="false">Auto rotate</button></div>
+</div>
+<p class="hint">Drag to orbit · Scroll or pinch to zoom · Right-drag or two fingers to pan</p>
+<div class="footer"><span>Current sensing · Thread radio · Local storage</span><div class="downloads"><a href="nami.glb" download>Download GLB ↓</a><a href="https://github.com/jemdiggity/nami/raw/refs/heads/main/hardware/nami-compact/exports/nami-compact.step">Download STEP ↓</a><a href="https://github.com/jemdiggity/nami/blob/main/hardware/nami-compact/exports/nami-schematic.pdf">Schematics ↗</a></div></div>
+<p class="note">Generated from the KiCad layout. Component colors are retained, with material finishes adjusted for the browser preview. Library bodies are illustrative, not a validated mechanical assembly. External clamp, battery, and enclosure are not shown.</p>
+</main><script>
+const board=document.querySelector('#board'),status=document.querySelector('#status'),spin=document.querySelector('#spin');
+board.addEventListener('load',()=>{status.textContent='';document.body.dataset.modelLoaded='true'});
+board.addEventListener('error',()=>{status.textContent='The model could not load. Reload the page or download the GLB below.'});
+document.querySelectorAll('[data-orbit]').forEach(button=>button.addEventListener('click',()=>{board.autoRotate=false;spin.setAttribute('aria-pressed','false');board.cameraOrbit=button.dataset.orbit;board.cameraTarget='auto auto auto'}));
+spin.addEventListener('click',()=>{board.autoRotate=!board.autoRotate;spin.setAttribute('aria-pressed',String(board.autoRotate))});
+setTimeout(()=>{if(!customElements.get('model-viewer'))status.textContent='The 3D viewer could not load. Download the GLB below to open it locally.'},15000);
+</script></body></html>
