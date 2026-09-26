@@ -11,6 +11,7 @@ This is a routed, checked candidate for the product's electronics, not a qualifi
 | [Schematic PDF](exports/nami-schematic.pdf) | Five sheets, including the off-board CT burden |
 | [STEP model](exports/nami-compact.step) | Board and available library models for initial enclosure work; not a certified component tolerance model |
 | [BOM](exports/bom.csv) | Package changes and preliminary parts; PCB contacts/test pads are not purchased components |
+| [Routing review: before / after](exports/routing-review.pdf) | Ten close-ups covering the flagged routing details; ground fills hidden for clarity |
 | [Layout verification](verification/compact-layout.json) | Dimensions, circuit equivalence, layer use and critical route lengths |
 | [ERC](verification/erc.rpt) / [DRC](verification/drc.rpt) | Electrical, clearance, connectivity and schematic parity checks |
 
@@ -76,8 +77,14 @@ The committed native CAD is the review result. The scripts overwrite generated f
 1. `NAMI_VARIANT=compact python hardware/tools/generate.py`
 2. Run `hardware/tools/compact_board.py` with KiCad Python. This creates local contact footprints, a fresh board, hand-routed power paths and `nami.dsn`.
 3. Reuse the matching committed `nami.ses`, or run Freerouting 2.0.1 locally against that DSN. L2 is marked as a power layer in the routing exchange. Changed placement or critical routes require a new session.
-4. Run `hardware/tools/compact_finish.py` with KiCad Python to import the session, fill ground and stitch ground regions.
+4. Run `hardware/tools/compact_finish.py` with KiCad Python to import the session, fill ground, stitch ground regions, and apply `refine_routes.py`. The refinement moves the crystal/load capacitors and selected vias, and replaces the reviewed routing details. Do not apply it a second time to a finished board.
 5. Export KiCad XML netlist to `exports/nami-netlist.xml`; run `NAMI_VARIANT=compact ... hardware/tools/sync_board.py` with KiCad Python.
 6. Run KiCad ERC and PCB DRC with `--schematic-parity --exit-code-violations`; run `NAMI_VARIANT=compact python hardware/tools/verify.py` and `hardware/tools/compact_verify.py` with KiCad Python. Regenerate review PDF, renders and STEP after changes.
 
 Local connector footprints live in `Nami.pretty` and `fp-lib-table`. Other symbols/footprints use the installed KiCad libraries. `NAMI_VARIANT` defaults to the original bench design; selecting compact does not overwrite it.
+
+### Layout review, 2026-09-26
+
+The analog sheet now draws the midpoint voltage follower, input network, non-inverting gain stage, feedback resistors and ADC filters with direct wires. Decoupling remains separate. This presentation is shared with the bench design and preserves the original electrical nets.
+
+The reviewed routing changes align C13/C14 with Y1, remove the module supply loop/spur, straighten the CT return pad exits, replace pair/MOSI jogs, improve rear supply and flash pad exits, and move the battery split into C1 instead of an external right-angle T. The clock via and two ground stitching vias move to maintain clearance. The 24 × 32 mm outline, power-loop routes, four-layer construction and component values remain unchanged. See the before/after PDF above.

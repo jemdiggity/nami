@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/Users/jeremyhale/work/denki/nami/hardware/nami-rev-a/nami.kicad_sch</source>
-    <date>2026-09-26T09:12:20</date>
+    <date>2026-09-26T11:06:50</date>
     <tool>Eeschema 10.0.6</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -1099,7 +1099,7 @@
       <property name="ki_keywords" value="dual opamp"/>
       <property name="ki_fp_filters" value="SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* TO*99* OnSemi*Micro8* TSSOP*3x3mm*P0.65mm* TSSOP*4.4x3mm*P0.65mm* MSOP*3x3mm*P0.65mm* SSOP*3.9x4.9mm*P0.635mm* LFCSP*2x2mm*P0.5mm* *SIP* SOIC*5.3x6.2mm*P1.27mm*"/>
       <sheetpath names="/ANALOG/" tstamps="/e5a87926-c4a9-5100-984b-a547b260a64e/"/>
-      <tstamps>d9ce67b4-fe80-54cc-ba6c-4be43a1d02e0 ed0a8263-2d28-5d02-89c4-d219deccf04e 213b1263-9fd6-5ae1-bdf8-8084c9bdd255</tstamps>
+      <tstamps>ed0a8263-2d28-5d02-89c4-d219deccf04e d9ce67b4-fe80-54cc-ba6c-4be43a1d02e0 213b1263-9fd6-5ae1-bdf8-8084c9bdd255</tstamps>
       <units>
         <unit name="A">
           <pins>

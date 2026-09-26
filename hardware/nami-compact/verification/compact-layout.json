@@ -14,8 +14,8 @@
     "back": 28
   },
   "routing_segments_by_layer": {
-    "F.Cu": 214,
-    "B.Cu": 121,
+    "F.Cu": 209,
+    "B.Cu": 128,
     "In2.Cu": 9
   },
   "ground_plane_layer": "In1.Cu; no routed tracks",
@@ -29,8 +29,8 @@
     "LX2": 0
   },
   "crystal_net_total_length_mm": {
-    "XL1": 9.231,
-    "XL2": 9.498
+    "XL1": 8.302,
+    "XL2": 8.545
   },
   "crystal_net_vias": {
     "XL1": 0,

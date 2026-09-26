@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Import compact routing into a fresh compact_board.py board, then fill pours."""
-import math
+import math, json
 from pathlib import Path
 import pcbnew as p
 import wx
@@ -64,6 +64,12 @@ p.ZONE_FILLER(b).Fill(b.Zones())
 # Assembly/service markings in reserved spaces.
 for label,x,y,layer in [('+',21.75,47.4,p.F_SilkS),('+',39.25,48,p.B_SilkS),('PAIR',24,45.6,p.B_SilkS),('RST',30,45.6,p.B_SilkS)]:
  t=p.PCB_TEXT(b);t.SetText(label);t.SetPosition(v(x,y));t.SetTextSize(v(.8,.8));t.SetTextThickness(p.FromMM(.12));t.SetLayer(layer);t.SetMirrored(layer==p.B_SilkS);b.Add(t)
+# Apply the explicit layout-review corrections after importing the original
+# routing session and stitching; keep the same edits in every regeneration.
+from refine_routes import refine
+refine(b)
+p.ZONE_FILLER(b).Fill(b.Zones())
+(out/'verification/pads.json').write_text(json.dumps({f.GetReference():{pad.GetNumber():[round(p.ToMM(pad.GetPosition().x),4),round(p.ToMM(pad.GetPosition().y),4),pad.GetNetname()] for pad in f.Pads()} for f in b.GetFootprints() if not f.GetReference().startswith('FID')},indent=2)+'\n')
 p.SaveBoard(str(out/'nami.kicad_pcb'),b)
 print('Added',len(added),'ground stitching vias')
 print('Imported compact routes and filled ground planes')

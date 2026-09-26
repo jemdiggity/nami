@@ -193,6 +193,9 @@ def write_sheet(sh):
             ex,ey=round(px+dx*5.08,4),round(py+dy*5.08,4)
             doc.append([S('wire'),[S('pts'),[S('xy'),px,py],[S('xy'),ex,ey]],[S('stroke'),[S('width'),0],[S('type'),S('default')]],[S('uuid'),uid(symid+'/wire/'+num)]])
             doc.append([S('global_label'),net,[S('shape'),S('bidirectional')],[S('at'),ex,ey,angle],eff(.9),[S('uuid'),uid(symid+'/label/'+num)]])
+    if sh=='analog':
+        from analog_drawing import redraw
+        doc=redraw(doc,uid)
     doc.append([S('embedded_fonts'),S('no')]);(OUT/(sh+'.kicad_sch')).write_text(sx.dumps(doc).replace('Nami Rev A -','Nami Compact C0 -').replace('A0 BENCH','C0 CANDIDATE')+'\n' if COMPACT else sx.dumps(doc)+'\n')
 for sh in notes:write_sheet(sh)
 doc=[S('kicad_sch'),[S('version'),20250114],[S('generator'),'eeschema'],[S('uuid'),rootid],[S('paper'),'A3'],[S('title_block'),[S('title'),'Nami Compact C0' if COMPACT else 'Nami - Rev A bench prototype'],[S('date'),'2026-09-26'],[S('rev'),'C0 CANDIDATE' if COMPACT else 'A0']],[S('lib_symbols')]]
@@ -219,5 +222,6 @@ project={'meta':{'filename':'nami.kicad_pro','version':1},'net_settings':{'class
 if COMPACT:
     project['net_settings']['classes'][0].update(clearance=0.15,track_width=0.18,via_diameter=0.5,via_drill=0.25)
     project['board']['design_settings']['rules'].update(min_through_hole_diameter=0.25,min_hole_clearance=0.25)
-(OUT/'nami.kicad_pro').write_text(json.dumps(project,indent=2)+'\n')
+if os.environ.get('NAMI_KEEP_PROJECT')!='1':
+    (OUT/'nami.kicad_pro').write_text(json.dumps(project,indent=2)+'\n')
 print('Generated',len(physical),'physical components and five schematic sheets')
